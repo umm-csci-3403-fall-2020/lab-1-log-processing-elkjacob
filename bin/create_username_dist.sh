@@ -1,7 +1,7 @@
-#!bin/bash
+#!usr/bin/env bash
 
 #move to directory
-cd ./"$1"
+cd ./"$1" || exit
 #gather contents of failed_login_data.txt into
 cat /{}/failed_login_data.txt > tmp_data.txt
 #sort input with 'sort'
