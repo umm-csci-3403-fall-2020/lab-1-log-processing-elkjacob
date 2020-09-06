@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-#Capture the header directory
-#header=$(./html_components/username_dist_header.html)
-
-#Create a base name for the header
-#base=$(basename "$header" _header.html)
-
 #Move to directory
 cd ./"$1" || exit
 
@@ -19,7 +13,7 @@ find . -type f -name 'failed_login_data.txt' -exec cat {} + > tmp_data.txt
 sort tmp_data.txt
 
 #Takes in tmp_data.txt and then filters out everything except usernames and puts it in username_dist.txt
-cat ./tmp_data.txt | awk -F"[ :]+" '/.*/ {print $4}' > username_dist.html
+awk -F"[ :]+" '/.*/ {print $4}'< ./tmp_data.txt > username_dist.html
 
 #Sort usernames
 sort username_dist.html > tmp_data.txt
