@@ -1,11 +1,13 @@
+#!/usr/bin/env bash
+here=$(pwd)
 tmp_dir=$(mktemp -d)
 #Loop over tar files and extract contents
 for i in "$@"
 do
 base_file_name=$(awk '/(-w\)_secure.tgz/')
-tar -xzf ./log_files/"$i" -C "$tmp_dir"/"base_file_name"
+tar -xzf ./log_files/"$i" -C "$tmp_dir"/"$base_file_name"
 #Call 'process_client_logs.sh'
-./bin/process_client_logs.sh ./"tmp_dir"/"$base_file_name"
+./bin/process_client_logs.sh ./"$tmp_dir"/"$base_file_name"
 done
 #Call 'create_username_dist.sh'
 ./bin/create_username_dist.sh "$tmp_dir"
