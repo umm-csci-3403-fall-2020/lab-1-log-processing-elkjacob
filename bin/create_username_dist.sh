@@ -12,7 +12,7 @@ find . -type f -name 'failed_login_data.txt' -exec cat {} + > tmp_data.txt
 #Sort input with sort
 sort tmp_data.txt
 
-#Takes in tmp_data.txt and then filters out everything except usernames and puts it in username_dist.txt
+#Takes in tmp_data.txt and then filters out everything except usernames and puts it in username_dist.html
 awk -F"[ :]+" '/.*/ {print $4}'< ./tmp_data.txt > username_dist.html
 
 #Sort usernames
@@ -25,7 +25,7 @@ uniq -c tmp_data.txt | awk '/.*/ {print "data.addRow([\x27"$2"\x27, "$1"]);"}' >
 #Change directory to the top level
 cd ..
 
-#Take the contents of tmp_data.txt and pass it through wrap_contents.sh into username_dist.html
+#Take the contents of username_dist.html and pass it through wrap_contents.sh into tmp_data.txt
 ./bin/wrap_contents.sh ./data/username_dist.html ./html_components/username_dist ./data/tmp_data.txt
 
 #Write the final wrapped content to username_dist.html
