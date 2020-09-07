@@ -15,7 +15,7 @@ sort tmp_data.txt
 #Takes in tmp_data.txt and then filters out everything except hours and puts it in hours_dist.html
 awk -F"[ :]+" '/.*/ {print $3}'< ./tmp_data.txt > hours_dist.html
 
-#Sort hours
+#Sort hours and put the output in tmp_data.txt
 sort -n hours_dist.html > tmp_data.txt
 
 #Count how many times each hour appears with command uniq and pipes it
@@ -25,7 +25,7 @@ uniq -c tmp_data.txt | awk '/.*/ {print "data.addRow([\x27"$2"\x27, "$1"]);"}' >
 #Change directory to the top level
 cd ..
 
-#Take the contents of tmp_data.txt and pass it through wrap_contents.sh into hours_dist.html
+#Take the contents of hours_dist.html and pass it through wrap_contents.sh into tmp_data.txt
 ./bin/wrap_contents.sh ./data/hours_dist.html ./html_components/hours_dist ./data/tmp_data.txt
 
 #Write the final wrapped content to hours_dist.html
