@@ -7,3 +7,12 @@
 [submodule "tests/test_helper/bats-assert"]
 	path = tests/test_helper/bats-assert
 	url = https://github.com/bats-core/bats-assert
+[submodule "bin/tests/test_helper/bats-support"]
+	path = bin/tests/test_helper/bats-support
+	url = https://github.com/bats-core/bats-support
+[submodule "bin/tests/test_helper/bats-assert"]
+	path = bin/tests/test_helper/bats-assert
+	url = https://github.com/bats-core/bats-assert
+[submodule "bin/tests/test_helper/bats-file"]
+	path = bin/tests/test_helper/bats-file
+	url = https://github.com/bats-core/bats-file
