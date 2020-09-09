@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #Move to directory
-cd ./"$1" || exit
+cd "$1" || exit
 
 #Create the hours_dist.html file
 touch hours_dist.html
@@ -26,7 +26,7 @@ uniq -c tmp_data.txt | awk '/.*/ {print "data.addRow([\x27"$2"\x27, "$1"]);"}' >
 cd ..
 
 #Take the contents of hours_dist.html and pass it through wrap_contents.sh into tmp_data.txt
-./bin/wrap_contents.sh ./data/hours_dist.html ./html_components/hours_dist ./data/tmp_data.txt
+/bin/wrap_contents.sh ./data/hours_dist.html ./html_components/hours_dist ./data/tmp_data.txt
 
 #Write the final wrapped content to hours_dist.html
 cat ./data/tmp_data.txt > ./data/hours_dist.html
