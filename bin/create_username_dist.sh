@@ -26,7 +26,7 @@ uniq -c tmp_data.txt | awk '/.*/ {print "data.addRow([\x27"$2"\x27, "$1"]);"}' >
 cd ..
 
 #Take the contents of username_dist.html and pass it through wrap_contents.sh into tmp_data.txt
-/bin/wrap_contents.sh ./data/username_dist.html ./html_components/username_dist ./data/tmp_data.txt
+./bin/wrap_contents.sh ./data/username_dist.html ./html_components/username_dist ./data/tmp_data.txt
 
 #Write the final wrapped content to username_dist.html
 cat ./data/tmp_data.txt > ./data/username_dist.html

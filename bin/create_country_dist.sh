@@ -32,7 +32,7 @@ uniq -c tmp6_data.txt | awk '/.*/ {print "data.addRow([\x27"$2"\x27, "$1"]);"}' 
 cd .. || exit
 
 #Take the contents of tmp7_data.txt and passes it through wrap_contents.sh into tmp_final.txt
-/bin/wrap_contents.sh ./data/tmp7_data.txt ./html_components/country_dist ./data/tmp_final.txt
+./bin/wrap_contents.sh ./data/tmp7_data.txt ./html_components/country_dist ./data/tmp_final.txt
 
 #Write the final wrapped content to country_dist.html
 cat ./data/tmp_final.txt > ./data/country_dist.html
