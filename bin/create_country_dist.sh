@@ -36,3 +36,6 @@ cd .. || exit
 
 #Write the final wrapped content to country_dist.html
 cat ./data/tmp_final.txt > ./data/country_dist.html
+
+#Remove all temporary files
+rm -f tmp*.txt
