@@ -6,7 +6,8 @@ mkdir data
 
 #Loop over the log files, create a directory named after the log,
 #and extract the contents of the log into that directory
-for name in cscirepo_secure.tgz discovery_secure.tgz ganesha_secure.tgz mylar_secure.tgz velcro_secure.tgz zeus_secu>do
+for name in cscirepo_secure.tgz discovery_secure.tgz ganesha_secure.tgz mylar_secure.tgz velcro_secure.tgz zeus_secure.tgz
+do
         base=$(basename "$name" _secure.tgz)
         mkdir ./data/"$base"
         tar -xzf ./log_files/"$name" -C ./data/"$base"
