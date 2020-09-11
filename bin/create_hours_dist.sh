@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #Move to directory
-cd ./"$1" || exit
+cd "$1" || exit
 
 #Create the hours_dist.html file
 touch hours_dist.html

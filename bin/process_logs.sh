@@ -6,14 +6,13 @@ mkdir data
 
 #Loop over the log files, create a directory named after the log,
 #and extract the contents of the log into that directory
-for name in cscirepo_secure.tgz discovery_secure.tgz ganesha_secure.tgz mylar_secure.tgz velcro_secure.tgz zeus_secure.tgz
-do
-	base=$(basename "$name" _secure.tgz)
-	mkdir ./data/"$base"
-	tar -xzf ./log_files/"$name" -C ./data/"$base"
+for name in cscirepo_secure.tgz discovery_secure.tgz ganesha_secure.tgz mylar_secure.tgz velcro_secure.tgz zeus_secu>do
+        base=$(basename "$name" _secure.tgz)
+        mkdir ./data/"$base"
+        tar -xzf ./log_files/"$name" -C ./data/"$base"
 
-	#Call 'process_client_logs.sh'
-	./bin/process_client_logs.sh ./data/"$base"
+        #Call 'process_client_logs.sh'
+        ./bin/process_client_logs.sh ./data/"$base"
 done
 
 #Call the scripts
@@ -27,4 +26,3 @@ mv ./data/failed_login_summary.html "$here"
 
 #Cleanup, remove temporary directory
 rm -rf ./data
-

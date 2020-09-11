@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #Move to directory
-cd ./"$1" || exit
+cd "$1" || exit
 
 #Create the username_dist.html file
 touch username_dist.html
